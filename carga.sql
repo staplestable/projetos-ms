@@ -30,20 +30,6 @@ $$ LANGUAGE plpgsql;
 
 SELECT gerar_autores(10000);
 
---SELECT COUNT(*) FROM tb_autor;
-
---INSERT INTO tb_autor (telefone, nn_nome, email, data_nascimento) VALUES (123456789, 'MAGNA', 'email@magnasistemas.com.br', '02-09-2004');
-
---DO $$
---DECLARE
---    start_time TIMESTAMP := current_timestamp;
---BEGIN
---    WHILE current_timestamp - start_time < INTERVAL '14 minutes' LOOP
---        PERFORM gerar_autores();
---        PERFORM pg_sleep(3); -- Sleep for 1 minute
---    END LOOP;
---END $$;
-
 -- Gerando editoras
 
 CREATE OR REPLACE FUNCTION gerar_editoras(
@@ -268,7 +254,7 @@ CREATE OR REPLACE FUNCTION gerar_categoria(
 )
 RETURNS VOID AS $$
 declare
-    categorias GENRES[] := ARRAY[
+    categorias TEXT[] := ARRAY[
         'Horror', 'Adventure', 'Comedy', 'Investigation', 'Mistery', 'Sci-Fy'
     ];
    	i INTEGER := 1;
