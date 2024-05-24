@@ -10,6 +10,10 @@ drop table if exists tb_livro;
 DROP table if exists tb_autor;
 drop table if exists tb_editora;
 
+drop extension if exists pg_stat_statements;
+drop view if exists pg_stat_statements;
+drop view if exists pg_stat_statements_info;
+
 -- vacuum full;
 
 CREATE TABLE tb_editora (

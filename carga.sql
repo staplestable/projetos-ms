@@ -330,4 +330,3 @@ END;
 $$ LANGUAGE plpgsql;
 
 SELECT gerar_categoria_livros(10000);
-
